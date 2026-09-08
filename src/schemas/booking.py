@@ -12,7 +12,7 @@ from services.booking_service import (
 )
 
 
-class BookingCreateSchema(BaseModel):
+class BookingBase(BaseModel):
     name: str = Field(
         min_length=2,
         max_length=100,
@@ -45,6 +45,8 @@ class BookingCreateSchema(BaseModel):
         examples=[2, 4],
     )
 
+
+class BookingCreateSchema(BookingBase):
     @field_validator("name")
     @classmethod
     def name_is_valid(cls, value: str) -> str:
@@ -66,7 +68,7 @@ class BookingCreateSchema(BaseModel):
         return validate_booking_time(value)
 
 
-class BookingSchema(BookingCreateSchema):
+class BookingSchema(BookingBase):
     model_config = ConfigDict(from_attributes=True)
 
     id: int = Field(
