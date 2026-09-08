@@ -1,5 +1,4 @@
 from datetime import date, time
-from typing import Type
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,7 +9,7 @@ from schemas.booking import BookingCreateSchema, BookingSchema
 
 
 class BookingRepository:
-    _model: Type[Booking] = Booking
+    _model: type[Booking] = Booking
 
     async def get_by_id(
         self,
@@ -90,4 +89,3 @@ class BookingRepository:
             await session.flush()
 
         return BookingSchema.model_validate(booking)
-
