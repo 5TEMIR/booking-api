@@ -12,6 +12,14 @@ docker compose up --build
 
 ## Тесты
 
+Установка зависимостей:
+
+```bash
+poetry install
+```
+
+Запуск:
+
 ```bash
 poetry run pytest
 ```
