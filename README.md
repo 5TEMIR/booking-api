@@ -1,5 +1,7 @@
 # Booking API — MISE тестовое задание (Backend Trainee)
 
+[![CI](https://github.com/5TEMIR/booking-api/actions/workflows/ci.yml/badge.svg)](https://github.com/5TEMIR/booking-api/actions/workflows/ci.yml)
+
 REST API для онлайн-бронирования столика в ресторане.
 
 **Стек:** Python 3.13+, FastAPI, Pydantic v2, SQLAlchemy 2.0 (async), SQLite (aiosqlite), Alembic, Uvicorn.
